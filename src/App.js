@@ -3,6 +3,7 @@ import './App.css';
 import Cover from './Pages/Cover';
 import Welcome from './Pages/Welcome';
 import PrivateRoutes from './Routes/PrivateRoutes';
+import Navbar from './components/Navbar';
 
 function App() {
  let token=localStorage.getItem('token')
@@ -10,8 +11,8 @@ function App() {
  
   return (
     <div className="App">
-      <Welcome/>
-   
+      {/* <Welcome/> */}
+   <Navbar/>
     </div>
   );
 }
