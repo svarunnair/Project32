@@ -20,14 +20,14 @@ function Men() {
         navigate(`/detail/${id}`)
     }
   return (
-    <Grid display={'grid'} gridTemplateColumns={"repeat(6,1fr)"}>
+    <Grid border={'solid black'} display={'grid'} gridTemplateColumns={"repeat(6,1fr)"}>
         
         {dataMen?.map((item)=>(
             <Grid >
           
              
                 <Grid  all textAlign={'center'}  bg={'white'} color={"black"} cursor={'pointer'} justifyContent={"center"} >
-                <Img onClick={()=>handleProducet(item.id)} width={"210px"} src={item?.images[1]}/>
+                <Img onClick={()=>handleProducet(item.id)} width={"210px"} src={item?.images[0]}/>
                <Text width={"200px"} fontSize={"small"}> {item.name}</Text>
                <Text>{item.price}</Text>
                <Button>+</Button>

@@ -6,15 +6,21 @@ import kids from '../components/kids.mp4'
 import men from '../components/men.mp4'
 import women from '../components/women.mp4'
 import { Grid, Img } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 
 function Cover() {
+    const navigate=useNavigate()
+
+    // const handleWomen=()=>{
+    //     navigate('/women')
+    // }
   return (
-    <Grid>
+    <Grid cursor={'pointer'}>
 
 
 <Carousel>
                 <Grid>
-                    <Img src="https://static.zara.net/photos///contents/mkt/spots/aw23-north-woman-new/subhome-xmedia-48//w/1920/IMAGE-landscape-fill-a03148dc-17d3-4cbb-98ba-59237b7229f0-default_0.jpg?ts=1701338880413" />
+                    <Img  src="https://static.zara.net/photos///contents/mkt/spots/aw23-north-woman-new/subhome-xmedia-48//w/1920/IMAGE-landscape-fill-a03148dc-17d3-4cbb-98ba-59237b7229f0-default_0.jpg?ts=1701338880413" />
                     
                 </Grid>
                 <Grid>

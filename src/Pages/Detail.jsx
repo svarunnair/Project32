@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
-import { getDetails } from '../Redux/data/action'
+import { useNavigate, useParams } from 'react-router-dom'
+import { getDetails, postCart } from '../Redux/data/action'
 import { Button, Img } from '@chakra-ui/react'
 
 function Detail() {
     const params=useParams()
+    const navigate=useNavigate()
 
     console.log("params",params)
 
@@ -13,9 +14,7 @@ function Detail() {
     const details=useSelector((store)=>store.data.getDetails)
     const dispatch=useDispatch()
     const [count,setCount]=useState(0)
-    const [data,setData]=useState(
-      []
-    )
+    const [data,setData]=useState([])
 
     const handleNext=()=>{
         
@@ -31,12 +30,17 @@ useEffect(()=>{
   
 },[details])
 
-    console.log("data",)
+    console.log("data",data)
     console.log("detail",details)
 
     useEffect(()=>{
       dispatch(getDetails(params?.id))
     },[params])
+
+    const handleBag=()=>{
+      details.quant=1
+      dispatch(postCart(details))    
+    }
 
   return (
     <div>
@@ -47,9 +51,10 @@ useEffect(()=>{
 
 
        {details?.price}<br/>
-       <Img src={data?.[count]}/>
+       <Img width={"200px"} src={data?.[count]}/>
        <Button onClick={handleNext}>next</Button>
        <Button >prev</Button>
+       <Button onClick={()=>handleBag()}>Add to bag</Button>
 
        
         

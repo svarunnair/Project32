@@ -5,9 +5,10 @@ import Signup from '../Pages/auth/Signup'
 import Signin from '../Pages/auth/Signin'
 import Cover from '../Pages/Cover'
 import Men from '../Pages/Men'
-import Women from '../Pages/auth/Women'
-import Kids from '../Pages/auth/Kids'
+import Women from '../Pages/Women'
+import Kids from '../Pages/Kids'
 import Detail from '../Pages/Detail'
+import Help from '../Pages/Help'
 
 function PublicRoutes() {
 
@@ -21,6 +22,7 @@ function PublicRoutes() {
             <Route path='/signup' element={<Signup/>}/>
             <Route path='/signin' element={<Signin/>}/>
             <Route path='/cover' element={<Cover/>}/>
+            <Route path='/help' element={<Help/>}/>
 
 
         </Routes>

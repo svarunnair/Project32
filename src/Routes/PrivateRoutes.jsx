@@ -3,10 +3,16 @@ import { Route, Routes } from 'react-router-dom'
 import Home from '../Pages/Home'
 import Welcome from '../Pages/Welcome'
 import Cover from '../Pages/Cover'
-import Women from '../Pages/auth/Women'
-import Kids from '../Pages/auth/Kids'
+import Women from '../Pages/Women'
+import Kids from '../Pages/Kids'
 import Detail from '../Pages/Detail'
 import Men from '../Pages/Men'
+import Cart from '../Pages/Cart'
+import Billing from '../Pages/Billing'
+import Address from '../Pages/Address'
+import Signup from '../Pages/auth/Signup'
+import Help from '../Pages/Help'
+import Signin from '../Pages/auth/Signin'
 
 function PrivateRoutes() {
 
@@ -21,7 +27,12 @@ function PrivateRoutes() {
             <Route path='/kids' element={token&&<Kids/>}/>
             <Route path='/men' element={token&&<Men/>}/>
             <Route path='/detail/:id' element={token&&<Detail/>}/>
-
+            <Route path='/cart' element={token&&<Cart/>}/>
+            <Route path='/billing' element={token&&<Billing/>}/>
+            <Route path='/address' element={token&&<Address/>}/>
+            <Route path='/signup' element={<Signup/>}/>
+            <Route path='/help' element={<Help/>}/>
+            <Route path='/signin' element={<Signin/>}/>
 
 </Routes>
 
