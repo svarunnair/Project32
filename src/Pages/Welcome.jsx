@@ -40,7 +40,7 @@ function Welcome() {
 
 <Grid position={"absolute"}>
         <Flex >
-<Img position={"relative"} cursor={'pointer'}  onClick={handleImage} src= {zara}/>
+<Img width={"200px"} cursor={'pointer'}  onClick={handleImage} src= {zara}/>
 
 <Flex fontFamily={"unset"} fontSize={"13px"} marginLeft={"450px"}>
 <Input position="sticky"  top="0"

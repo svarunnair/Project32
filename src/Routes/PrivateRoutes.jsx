@@ -13,6 +13,7 @@ import Address from '../Pages/Address'
 import Signup from '../Pages/auth/Signup'
 import Help from '../Pages/Help'
 import Signin from '../Pages/auth/Signin'
+import Beauty from '../Pages/Beauty'
 
 function PrivateRoutes() {
 
@@ -33,6 +34,7 @@ function PrivateRoutes() {
             <Route path='/signup' element={<Signup/>}/>
             <Route path='/help' element={<Help/>}/>
             <Route path='/signin' element={<Signin/>}/>
+            <Route path='/beauty' element={<Beauty/>}/>
 
 </Routes>
 
