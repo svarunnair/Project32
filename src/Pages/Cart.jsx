@@ -1,37 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCart, patchCart, postBilling } from '../Redux/data/action'
-import { Button, Flex, Grid, Img, Text, grid } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, Img, Text, grid } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
+import { color } from 'framer-motion'
 
 function Cart() {
 
     const cartData=useSelector((store)=>store.data.getCart)
     const dispatch=useDispatch()
     const navigate=useNavigate()
-    const [count,setCount]=useState(0)
+    // const [count,setCount]=useState(0)
 
     console.log("cartData",cartData)
 
 
-    const handleAddCount=(id)=>{
-        if(count>=2){
-            setCount(0)
-        }
-        else{
-            setCount(count+1)
-        }
+    // const handleAddCount=(id)=>{
+    //     if(count>=2){
+    //         setCount(0)
+    //     }
+    //     else{
+    //         setCount(count+1)
+    //     }
        
-    }
-    const handleReduceCount=()=>{
-        if(count<=0){
-            setCount(2)
-        }
-        else{
-            setCount(count-1)
-        }
+    // }
+    // const handleReduceCount=()=>{
+    //     if(count<=0){
+    //         setCount(2)
+    //     }
+    //     else{
+    //         setCount(count-1)
+    //     }
        
-    }
+    // }
 
     useEffect(()=>{
         dispatch(getCart())
@@ -64,41 +65,46 @@ function Cart() {
     dispatch(postBilling(cartData))
     navigate('/address')
     }
+
+    
   return (
-    <Grid>
-        <Grid justifyContent={'center'} >
+    <Grid color={"black"}>
+        <Grid color={"black"} padding={"10px"}  display={"flex"} gridTemplateColumns={"(repeat(6,1fr)"} >
          {cartData.map((item)=>(
-            <Grid border={'solid red'}>
-            {item.name}<br/>
-            {item.price}<br/>
+            <Grid marginTop={"150px"} border={'1px solid black'} width={"200px"} >
+           
             {/* {item.images.map((i)=>(
                 <>
                 <Img width={"200px"} src={i}/>
                 </>
             ))} */}
-            <Flex>
-            <Img width={"250px"} src={item.images[count]}/>
-            <Button onClick={()=>handleAddCount(item.id)}>next</Button>
-            <Button onClick={()=>handleReduceCount(item.id)}>prev</Button>
+            <Grid textAlign={"left"}>
+            <Img width={"250px"} src={item.images[0]}/>
+           <Text padding={"10px"} fontSize={"small"}>{item.name}</Text> <br/>
+           <Text padding={"10px"} marginTop={"-5"} fontSize={"x-small"}>₹ {item.price}.00</Text> <br/>
+           <Flex  justifyContent={"left"} padding={"10px"}>
+           <Button borderRadius={"0px"} border={"1px solid black"} color={"black"} height={"25px"}  width={"25px"} onClick={()=>handleAdd(item.id,item.quant)}>+</Button>
+           <Box fontSize={"smaller"} height={"25px"} textAlign={"center"} width={"40px"} border={"1px solid black"}><Text>{item.quant}</Text></Box>
+            <Button height={"25px"} borderRadius={"0px"} border={"1px solid black"} color={"black"}  width={"25px"} onClick={()=>handleReduce(item.id,item.quant)}>-</Button>
+           </Flex>
+            
 
-            </Flex>
-           
-
-            <Button width={"25px"} onClick={()=>handleAdd(item.id,item.quant)}>+</Button>
-            <Button width={"25px"} onClick={()=>handleReduce(item.id,item.quant)}>-</Button>
-            <Text>{item.quant}</Text>
-
+            </Grid>
+        
             
             </Grid>
          ))}
 
-<Text>Total amount :{total}</Text>
-            <Text fontSize={'smaller'}>INCLUDING GST
-* EXCL SHIPPING COST</Text>
-<Button onClick={hanldleContinue} >Continue</Button>
+
           </Grid>
-        
-    </Grid>
+
+          <Grid   border={"1px solid black"}>
+          <Text >Total amount :₹ {total}.00</Text>
+            <Text fontSize={"x-small"}>INCLUDING GST
+* EXCL SHIPPING COST</Text>
+<Button _hover={{ bg: "black" }} marginLeft={"1047px"} height={"80px"} borderRadius={"0px"} width={"200px"} bg={"black"} onClick={hanldleContinue} >Continue</Button>
+</Grid>
+          </Grid>
   )
 }
 

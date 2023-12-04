@@ -14,6 +14,7 @@ import Signup from '../Pages/auth/Signup'
 import Help from '../Pages/Help'
 import Signin from '../Pages/auth/Signin'
 import Beauty from '../Pages/Beauty'
+import Search from '../Pages/Search'
 
 function PrivateRoutes() {
 
@@ -35,6 +36,7 @@ function PrivateRoutes() {
             <Route path='/help' element={<Help/>}/>
             <Route path='/signin' element={<Signin/>}/>
             <Route path='/beauty' element={<Beauty/>}/>
+            <Route path='/search' element={<Search/>}/>
 
 </Routes>
 

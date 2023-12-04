@@ -4,6 +4,7 @@ import Cover from './Pages/Cover';
 import Welcome from './Pages/Welcome';
 import PrivateRoutes from './Routes/PrivateRoutes';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
  let token=localStorage.getItem('token')
@@ -13,6 +14,8 @@ function App() {
     <div className="App">
       {/* <Welcome/> */}
    <Navbar/>
+   <Footer/>
+   
     </div>
   );
 }

@@ -23,6 +23,9 @@ import PublicRoutes from '../Routes/PublicRoutes'
 import PrivateRoutes from '../Routes/PrivateRoutes'
 import zara from '../components/zara.png'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { getCart, getData } from '../Redux/data/action'
   
 
   
@@ -52,6 +55,12 @@ import { useLocation, useNavigate } from 'react-router-dom'
     let token=localStorage.getItem('token')
     const navigate=useNavigate()
     const path=useLocation()
+    const dispatch=useDispatch()
+
+    const shoping=useSelector((store)=>store.data.getCart)
+
+    console.log('shoping.......',shoping)
+    
     const handleMen=()=>{
       navigate('/men')
     }
@@ -76,6 +85,15 @@ import { useLocation, useNavigate } from 'react-router-dom'
     const handleImage=()=>{
       navigate('/')
     }
+    const handleSearch=()=>{
+      navigate('/search')
+    }
+    useEffect(()=>{
+     dispatch(getCart())
+    },[])
+
+    const items=shoping.length
+    console.log("itemsssss",items)
     return (
       <>
         <Box bg={"transparent"} position={'sticky'}  top="0"
@@ -105,14 +123,17 @@ import { useLocation, useNavigate } from 'react-router-dom'
              
             
 <Grid marginLeft={"50px"} marginTop={"25px"}>
-<Input  width={"360px"} border={"groove"} borderRadius={"0PX"} color={'black'} height={"30px"} bg={"white"}   placeholder='SEARCH'/>
+  
+{path.pathname!=="/search"&&<Input onClick={handleSearch}  width={"360px"} border={"groove"} borderRadius={"0px"} color={'red'} height={"30px"}
+ fontSize={"small"}  _placeholder={{ color: 'black', textAlign:"right" }}  placeholder='SEARCH'/>}
+
 </Grid>
              
-             <Flex marginLeft={"300px"} gap={"20px"}>
+             <Flex cursor={'pointer'}  color={'black'} marginLeft={"300px"} gap={"20px"}>
 
              <Text fontSize={'x-small'} onClick={handleLogin}>LOG IN</Text>
              <Text fontSize={'x-small'} onClick={handleHelp}>HELP</Text>
-             <Text fontSize={'x-small'} onClick={handleShoping}>SHOPING BAG()</Text>
+             <Text fontSize={'x-small'} onClick={handleShoping}>SHOPING BAG({items})</Text>
 
               
              </Flex>

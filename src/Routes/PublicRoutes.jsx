@@ -9,6 +9,7 @@ import Women from '../Pages/Women'
 import Kids from '../Pages/Kids'
 import Detail from '../Pages/Detail'
 import Help from '../Pages/Help'
+import Search from '../Pages/Search'
 
 function PublicRoutes() {
 
@@ -23,6 +24,7 @@ function PublicRoutes() {
             <Route path='/signin' element={<Signin/>}/>
             <Route path='/cover' element={<Cover/>}/>
             <Route path='/help' element={<Help/>}/>
+            <Route path='/search' element={<Search/>}/>
 
 
         </Routes>

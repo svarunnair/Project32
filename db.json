@@ -276,21 +276,6 @@
   "cart": [
     {
       "product": "T-shirts",
-      "category": "kids",
-      "gender": "female",
-      "price": "2990",
-      "name": "SHORT SLEEVE STEVEN MEISEL T-SHIRT",
-      "img": "https://static.zara.net/photos///2023/I/0/1/p/6085/250/800/132/w/563/6085250800_2_4_1.jpg?ts=1694607354194",
-      "images": [
-        "https://static.zara.net/photos///2023/I/0/1/p/6085/250/800/132/w/563/6085250800_2_4_1.jpg?ts=1694607354194",
-        "https://static.zara.net/photos///2023/I/0/1/p/6085/250/800/132/w/563/6085250800_2_7_1.jpg?ts=1694607354648",
-        "https://static.zara.net/photos///2023/I/0/1/p/6085/250/800/132/w/563/6085250800_6_1_1.jpg?ts=1694607332854"
-      ],
-      "id": 17,
-      "quant": 2
-    },
-    {
-      "product": "T-shirts",
       "category": "men",
       "price": "2590",
       "name": "ABSTRACT PRINT SATIN SHIRT",
@@ -301,7 +286,7 @@
         "https://static.zara.net/photos///2023/I/0/2/p/1501/305/250/2/w/563/1501305250_2_4_1.jpg?ts=1693489792521"
       ],
       "id": 14,
-      "quant": 1
+      "quant": 2
     },
     {
       "producut": "Jacket",
