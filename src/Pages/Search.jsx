@@ -11,6 +11,9 @@ function Search() {
     const [search,setSearch]=useState('')
     const mainData=useSelector((store)=>store.data.getData)
     const dispatch=useDispatch()
+    const [data,setData] =useState([])
+
+
 
     console.log("mainDataaaaaa",mainData)
 
@@ -18,24 +21,31 @@ function Search() {
         let value=e.target.value 
         setSearch(value)   
     }
+    useEffect(()=>{
+        setData(mainData)
+    },[mainData])
 
     useEffect(()=>{
         dispatch(getData())
     },[])
   return (
     <Grid marginTop={"100px"}>
+        
      
-        <Input onChange={handleSearch} border={"1px solid black"} borderRadius={"0px"}
+        <Input position={'sticky'}  top="200" bg={'white'}
+        zIndex="1000" onChange={handleSearch} border={"1px solid black"} borderRadius={"0px"}
          fontSize={"smaller"} _placeholder={{ color: 'grey' } }
           placeholder='SEARCH FOR AN ITEM, COLOUR, COLLECTION...'/>
-<Text color={"grey"} fontSize={"x-small"}>YOU MIGHT BE INTERESTED IN</Text>
-          <Grid display={"grid"} gridTemplateColumns={"(repeat(6,1fr))"}>
+<Text marginTop={"30px"} marginBottom={"30px"} marginLeft={"1050px"} color={"grey"} fontSize={"x-small"}>YOU MIGHT BE INTERESTED IN</Text>
+          <Grid display={"grid"} gridTemplateColumns={"repeat(6,1fr)"}>
             
-            {mainData.map((item)=>(
-                <>
-                <Img width={"250px"} src={item.images[0]}/>
+            {data.map((item)=>(
+                <Grid  textAlign={"left"} border={"1px solid black"}>
+                <Img  width={"250px"} src={item.images[0]}/><br/>
+                <Text marginLeft={"10px"} marginTop={"-20px"} fontSize={"xx-small"}   color={"grey"}>{item.name}</Text><br/>
+                <Text marginLeft={"10px"} marginTop={"-20px"} fontSize={"xx-small"} color={"grey"}>₹ {item.price}</Text>
 
-                </>
+                </Grid>
             ))}
           </Grid>
     </Grid>
