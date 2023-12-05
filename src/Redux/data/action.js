@@ -282,7 +282,7 @@ export const getBilling=()=>(dispatch)=>{
     })
     .then((res)=>{
         dispatch(getBillingSuccess(res.data))
-        console.log("getBilling",res.data)
+        console.log("getBilling....",res.data)
     })
     .catch((error)=>{
         dispatch(getBillingFailure(error))
@@ -298,6 +298,8 @@ export const postAddress=(data)=>(dispatch)=>{
     })
     .then((res)=>{
         dispatch(postAddressSuccess(res.data))
+        localStorage.setItem("addressToken",res.data)
+        console.log("AdrsTkn",res.data)
         console.log("postAddress",res.data)
     })
     .catch((error)=>{

@@ -19,6 +19,7 @@ import Search from '../Pages/Search'
 function PrivateRoutes() {
 
   let token=localStorage.getItem('token')
+  let addressToken=localStorage.getItem('addressToken')
   return (
     <div>
 
@@ -31,12 +32,13 @@ function PrivateRoutes() {
             <Route path='/detail/:id' element={token&&<Detail/>}/>
             <Route path='/cart' element={token&&<Cart/>}/>
             <Route path='/billing' element={token&&<Billing/>}/>
-            <Route path='/address' element={token&&<Address/>}/>
+            <Route path='/address' element={addressToken?<Billing/>:<Address/>}/>
             <Route path='/signup' element={<Signup/>}/>
             <Route path='/help' element={<Help/>}/>
             <Route path='/signin' element={<Signin/>}/>
             <Route path='/beauty' element={<Beauty/>}/>
             <Route path='/search' element={<Search/>}/>
+            
 
 </Routes>
 

@@ -19,9 +19,6 @@ function Billing() {
     },[billingData])
     console.log('dataBill',data)
 
-
-
-
     console.log("billing",billingData)
 
     useEffect(()=>{
@@ -35,7 +32,7 @@ function Billing() {
             <Grid width={"250px"} color={"black"}>
         {item.name}
        
-       <Img src={data?.images[0]}/>
+       <Img src={data.images}/>
        
             </Grid>
         ))}
