@@ -10,6 +10,7 @@ import {
   chakra,
   useColorModeValue,
   Grid,
+  Flex,
 } from '@chakra-ui/react'
 import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa'
 
@@ -148,11 +149,20 @@ export default function Footer() {
           spacing={4}
           justify={{ md: 'space-between' }}
           align={{ md: 'center' }}>
-          <Text>ZARA/ OVERSIZED PUFFER JACKET</Text>
+            <Flex>
+            <Text marginTop={"120px"} color={'grey'} fontSize={"xx-small"}>INDIA</Text>
+            <Text marginLeft={"930px"} marginTop={"120px"} color={'grey'} fontSize={"xx-small"} >ENGLISH © ALL RIGHTS RESERVED</Text>
+            </Flex>
+
           <Stack direction={'row'} spacing={6}>
+            
+            
             
           </Stack>
         </Container>
+        <Flex padding={"70px"} marginTop={"50px"}  textAlign={"left"} color={'grey'} fontSize={"xx-small"}>NAME AND ADDRESS OF THE MANUFACTURER:<br/>
+INDUSTRIA DE DISEÑO TEXTIL, S.A. (INDITEX, S.A.)<br/>
+AVENIDA DE LA DIPUTACIÓN, EDIFICIO INDITEX, 15143, ARTEIXO (A CORUÑA), SPAIN<br/></Flex>
       </Box>
    
   )

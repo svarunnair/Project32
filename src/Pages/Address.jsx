@@ -80,24 +80,24 @@ function Address() {
 
 
   return (
-    <Grid  >
-        <Text>EDIT YOUR BILLING ADDRESS
+    <Grid marginTop={"100px"} color={"black"} >
+        <Text fontWeight={90}>EDIT YOUR BILLING ADDRESS<br/>
 To place your order, you must first fill in your account details. You can change them in your account at any time.</Text>
 
-<Grid display={'grid'} gridTemplateColumns={"repeat(2,1fr)"}>
+<Grid marginTop={"100px"} color={"black"} display={'grid'} gridTemplateColumns={"repeat(2,1fr)"}>
 
-    <Input onChange={handleName} width={"300px"} placeholder='NAME' />
-    <Input onChange={handleAddress} marginRight={"650px"} width={"300px"} placeholder='ADDRESS' />
-    <Input onChange={handleLocation} width={"300px"} placeholder='LOCATION' />
-    <Input onChange={handleState} width={"300px"} placeholder='STATE' />
-    <Input onChange={handleMobile} width={"300px"} placeholder='MOBILE NUMBER' />
-    <Input onChange={handleMore} width={"300px"} placeholder='MORE INFO' />
-    <Input onChange={handleCity} width={"300px"} placeholder='CITY' />
-    <Input onChange={handleRegion} width={"300px"} placeholder='REGION' />
+    <Input _hover={{ bg: "white" }} fontSize={"x-small"} borderRadius={"0px"}  _placeholder={{ color: 'grey' }} color={"black"} border={"1px solid black"} onChange={handleName} width={"300px"} placeholder='NAME' />
+    <Input _hover={{ bg: "white" }} fontSize={"x-small"} borderRadius={"0px"}   _placeholder={{ color: 'grey' }} color={"black"} border={"1px solid black"} onChange={handleAddress} marginRight={"650px"} width={"300px"} placeholder='ADDRESS' />
+    <Input _hover={{ bg: "white" }} fontSize={"x-small"} borderRadius={"0px"}   _placeholder={{ color: 'grey' }} color={"black"} border={"1px solid black"} onChange={handleLocation} width={"300px"} placeholder='LOCATION' />
+    <Input _hover={{ bg: "white" }} fontSize={"x-small"} borderRadius={"0px"}   _placeholder={{ color: 'grey' }} color={"black"} border={"1px solid black"} onChange={handleState} width={"300px"} placeholder='STATE' />
+    <Input _hover={{ bg: "white" }} fontSize={"x-small"} borderRadius={"0px"}   _placeholder={{ color: 'grey' }} color={"black"} border={"1px solid black"} onChange={handleMobile} width={"300px"} placeholder='MOBILE NUMBER' />
+    <Input _hover={{ bg: "white" }} fontSize={"x-small"} borderRadius={"0px"}   _placeholder={{ color: 'grey' }} color={"black"} border={"1px solid black"} onChange={handleMore} width={"300px"} placeholder='MORE INFO' />
+    <Input _hover={{ bg: "white" }} fontSize={"x-small"} borderRadius={"0px"}   _placeholder={{ color: 'grey' }} color={"black"} border={"1px solid black"} onChange={handleCity} width={"300px"} placeholder='CITY' />
+    <Input _hover={{ bg: "white" }} fontSize={"x-small"} borderRadius={"0px"}   _placeholder={{ color: 'grey' }} color={"black"} border={"1px solid black"} onChange={handleRegion} width={"300px"} placeholder='REGION' />
 
 </Grid>
 
-<Button onClick={handleContinue} marginLeft={"900px"} width={"250px"}>Continue</Button>
+<Button bg={'black'}  borderRadius={"0px"} color={"white"} border={"1px solid black"} onClick={handleContinue} marginLeft={"900px"} width={"250px"}>Continue</Button>
 
 
     </Grid>

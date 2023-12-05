@@ -35,9 +35,11 @@ function Signin() {
 
   return (
     <div>
-      <Text>NEED AN ACCOUNT?</Text>
+      <Text marginLeft={"400px"}>NEED AN ACCOUNT?</Text>
       <Flex marginRight={"500px"} marginTop={"22px"} marginLeft={"800px"}>
-        <Button fontSize={"small"} fontWeight={"1px"} height={"33px"} bg={'white'} border={"1px solid black"} borderRadius={"0px"} width={"400px"} onClick={handleRegistaer}>REGISTER </Button>
+        <Button fontSize={"small"} fontWeight={"1px"} height={"33px"} bg={'white'}
+         border={"1px solid black"} borderRadius={"0px"}onClick={handleRegistaer}>
+          REGISTER </Button>
         </Flex>
 
       <Grid gap={"20px"} paddingLeft={"15px"}>
@@ -46,7 +48,8 @@ function Signin() {
      <Text fontWeight={"small"} marginRight={"1410px"} >LOG IN TO YOUR ACCOUNT</Text> 
      <Input width={"400px"} onChange={handleEmail} placeholder='EMAIL'/>
      <Input width={"400px"} onChange={handlePassword} placeholder='PASSWORD'/>
-     <Button onClick={handleLogin} bgColor={'white'} borderRadius={'0px'} border={'1px solid black'} width={"400px"}>LOGIN</Button>
+     <Button onClick={handleLogin} bgColor={'white'} borderRadius={'0px'} 
+     border={'1px solid black'} width={"400px"}>LOGIN</Button>
      <Text marginRight={"1050px"} fontSize={'smaller'}>Have you forgotten your password?</Text>
 
 

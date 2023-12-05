@@ -19,8 +19,19 @@ function Search() {
 
     const handleSearch=(e)=>{
         let value=e.target.value 
-        setSearch(value)   
+
+        const  sortData=mainData.filter(item=>item.name.toLowerCase().includes(value.toLowerCase()))
+
+        console.log("value",value) 
+        setData(sortData)
+        console.log("sortData",sortData)
     }
+
+    
+    
+
+
+
     useEffect(()=>{
         setData(mainData)
     },[mainData])
@@ -32,8 +43,8 @@ function Search() {
     <Grid marginTop={"100px"}>
         
      
-        <Input position={'sticky'}  top="200" bg={'white'}
-        zIndex="1000" onChange={handleSearch} border={"1px solid black"} borderRadius={"0px"}
+        <Input position={'sticky'} zIndex="1000"  top="200" bg={'white'} color={"black"}
+         onChange={handleSearch} border={"1px solid black"} borderRadius={"0px"}
          fontSize={"smaller"} _placeholder={{ color: 'grey' } }
           placeholder='SEARCH FOR AN ITEM, COLOUR, COLLECTION...'/>
 <Text marginTop={"30px"} marginBottom={"30px"} marginLeft={"1050px"} color={"grey"} fontSize={"x-small"}>YOU MIGHT BE INTERESTED IN</Text>

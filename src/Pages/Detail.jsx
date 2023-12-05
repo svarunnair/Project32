@@ -18,6 +18,7 @@ function Detail() {
     const dispatch=useDispatch()
     const [count,setCount]=useState(0)
     const [data,setData]=useState([])
+    
 
     const handleNext=()=>{
       if(count>=2){

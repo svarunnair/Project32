@@ -10,29 +10,12 @@ function Cart() {
     const cartData=useSelector((store)=>store.data.getCart)
     const dispatch=useDispatch()
     const navigate=useNavigate()
+    
     // const [count,setCount]=useState(0)
 
     console.log("cartData",cartData)
 
 
-    // const handleAddCount=(id)=>{
-    //     if(count>=2){
-    //         setCount(0)
-    //     }
-    //     else{
-    //         setCount(count+1)
-    //     }
-       
-    // }
-    // const handleReduceCount=()=>{
-    //     if(count<=0){
-    //         setCount(2)
-    //     }
-    //     else{
-    //         setCount(count-1)
-    //     }
-       
-    // }
 
     useEffect(()=>{
         dispatch(getCart())
@@ -62,9 +45,12 @@ function Cart() {
     console.log("total",total)
 
     const hanldleContinue=()=>{
-    dispatch(postBilling(cartData))
+      cartData?.map((item)=>(
+        dispatch(postBilling(item))
+      ))
     navigate('/address')
     }
+    
 
     
   return (
@@ -73,11 +59,7 @@ function Cart() {
          {cartData.map((item)=>(
             <Grid marginTop={"150px"} border={'1px solid black'} width={"200px"} >
            
-            {/* {item.images.map((i)=>(
-                <>
-                <Img width={"200px"} src={i}/>
-                </>
-            ))} */}
+            
             <Grid textAlign={"left"}>
             <Img width={"250px"} src={item.images[0]}/>
            <Text padding={"10px"} fontSize={"small"}>{item.name}</Text> <br/>
@@ -85,7 +67,8 @@ function Cart() {
            <Flex  justifyContent={"left"} padding={"10px"}>
            <Button borderRadius={"0px"} border={"1px solid black"} color={"black"} height={"25px"}  width={"25px"} onClick={()=>handleAdd(item.id,item.quant)}>+</Button>
            <Box fontSize={"smaller"} height={"25px"} textAlign={"center"} width={"40px"} border={"1px solid black"}><Text>{item.quant}</Text></Box>
-            <Button height={"25px"} borderRadius={"0px"} border={"1px solid black"} color={"black"}  width={"25px"} onClick={()=>handleReduce(item.id,item.quant)}>-</Button>
+            <Button height={"25px"} borderRadius={"0px"} border={"1px solid black"} 
+            color={"black"}  width={"25px"} onClick={()=>handleReduce(item.id,item.quant)}>-</Button>
            </Flex>
             
 
@@ -102,7 +85,8 @@ function Cart() {
           <Text >Total amount :₹ {total}.00</Text>
             <Text fontSize={"x-small"}>INCLUDING GST
 * EXCL SHIPPING COST</Text>
-<Button _hover={{ bg: "black" }} marginLeft={"1047px"} height={"80px"} borderRadius={"0px"} width={"200px"} bg={"black"} onClick={hanldleContinue} >Continue</Button>
+<Button _hover={{ bg: "black" }} marginLeft={"1045px"} height={"80px"} 
+borderRadius={"0px"} width={"200px"} bg={"black"} color={"white"} onClick={hanldleContinue} >Continue</Button>
 </Grid>
           </Grid>
   )

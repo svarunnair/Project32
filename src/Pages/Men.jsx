@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../Redux/data/action'
-import { Button, Center, Grid, Img, Text } from '@chakra-ui/react'
+import { Button, Center, Flex, Grid, Img, Link, Text } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -20,23 +20,43 @@ function Men() {
         navigate(`/detail/${id}`)
     }
   return (
-    <Grid border={'solid black'} display={'grid'} gridTemplateColumns={"repeat(6,1fr)"}>
+    <Grid >
+        <Flex position={'sticky'} zIndex="1000"  top="200" marginTop={"100px"} marginBottom={"-80px"} marginLeft={"30px"} gap={"10px"}>
+        <Button fontWeight={450} width={"40px"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'grey'}>SIZE</Button>
+        <Button fontWeight={450} width={"50px"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'grey'}>PRICE</Button>
+        <Button fontWeight={450} width={"60px"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'grey'}>COLOUR</Button>
+
+        </Flex>
+        
+    <Grid  marginTop={"120px"} border={'1px solid black'} display={'grid'} gridTemplateColumns={"repeat(6,1fr)"}>
         
         {dataMen?.map((item)=>(
             <Grid >
           
              
-                <Grid  all textAlign={'center'}  bg={'white'} color={"black"} cursor={'pointer'} justifyContent={"center"} >
-                <Img onClick={()=>handleProducet(item.id)} width={"210px"} src={item?.images[0]}/>
-               <Text width={"200px"} fontSize={"small"}> {item.name}</Text>
-               <Text>{item.price}</Text>
-               <Button>+</Button>
+                <Grid  border={'1px solid black'}  all textAlign={'left'}  bg={'white'} color={"black"} 
+                cursor={'pointer'} justifyContent={"center"} >
+                <Img onClick={()=>handleProducet(item.id)} width={"250px"} src={item?.images[0]}/>
+               <Text  width={"200px"} fontSize={"x-small"}> {item.name}</Text>
+               <Text fontSize={"x-small"}>{item.price}</Text>
+               {/* <Button  textAlign={"center"} justifyContent={"center"}
+                borderRadius={"200px"} width={"5px"} bg={"gray.50"} 
+                color={"black"} border={"1px solid black"}>+</Button> */}
                 </Grid>
             
             </Grid>
         ))}
     
+   
         
+        </Grid >
+        <Grid padding={"10px"} marginLeft={"300px"} textAlign={'left'} marginTop={"180px"} marginBottom={"100px"} >
+        <Text marginTop={"10px"} fontSize={'small'}  color={"grey"}>MEN'S PUFFER COATS TO KEEP EVERY LOOK WARM AND ON-TREND</Text>
+        <Text marginTop={"10px"}  fontSize={'x-small'}  color={"grey"}>Zara’s range of men’s outerwear sees coats and jackets for men as more than just a warm layer to protect from weather conditions. Nowadays, men are<br/> 
+        choosing to express themselves in every aspect of their outfits, with the outer 
+        layers acting as a seal of approval for their personal taste and style.</Text>
+        <Link textDecoration={"underline"} color={"grey"} fontSize={"x-small"}>view</Link>
+        </Grid>
         </Grid>
   )
 }
