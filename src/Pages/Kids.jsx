@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../Redux/data/action'
-import { Button, Grid, Img } from '@chakra-ui/react'
+import { Button, Flex, Grid, Img } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 
 function Kids() {
@@ -20,21 +20,33 @@ function Kids() {
     dispatch(getData())
   },[])
   return (
-    <Grid border={'solid black'} cursor={'pointer'} fontSize={"xx-small"} display={'grid'} gridTemplateColumns={"repeat(6,1fr)"}>
+    <Grid>
+      
+      <Flex position={'sticky'} zIndex="1000"  top="200" marginTop={"100px"} marginBottom={"-80px"} marginLeft={"30px"} gap={"10px"}>
+        <Button fontWeight={450} width={"40px"} height={"25px"} border={"1px solid black"} borderRadius={"0px"} bg={"rgba(255,255,255,0)"}  fontSize={"small"} color={'black'}>SIZE</Button>
+        <Button fontWeight={450} width={"50px"} height={"25px"} border={"1px solid black"} borderRadius={"0px"} bg={"rgba(255,255,255,0)"} fontSize={"small"} color={'black'}>PRICE</Button>
+        <Button fontWeight={450} width={"60px"} height={"25px"} border={"1px solid black"} borderRadius={"0px"} bg={"rgba(255,255,255,0)"} fontSize={"small"} color={'black'}>COLOUR</Button>
+
+        </Flex>
+    
+    <Grid marginTop={"150px"} cursor={'pointer'} fontSize={"xx-small"} display={'grid'} gridTemplateColumns={"repeat(6,1fr)"}>
+
 
       {kidsData.map((item)=>(
 
-        <Grid>
+        <Grid  border={'1px solid black'}>
 
         {item.name}<br/>
         {item.price}<br/>
         <Img onClick={()=>handleProduct(item.id)} width={"210px"} src={item.images[0]}/><br/>
-        <Button  width={"210px"}>+</Button>
+       
           
         
         </Grid>
       ))}
 
+
+    </Grid>
 
     </Grid>
   )

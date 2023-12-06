@@ -95,7 +95,7 @@ To place your order, you must first fill in your account details. You can change
     <Input _hover={{ bg: "white" }} fontSize={"x-small"} borderRadius={"0px"}   _placeholder={{ color: 'grey' }} color={"black"} border={"1px solid black"} onChange={handleCity} width={"300px"} placeholder='CITY' />
     <Input _hover={{ bg: "white" }} fontSize={"x-small"} borderRadius={"0px"}   _placeholder={{ color: 'grey' }} color={"black"} border={"1px solid black"} onChange={handleRegion} width={"300px"} placeholder='REGION' />
 
-</Grid>
+</Grid >
 
 <Button bg={'black'}  borderRadius={"0px"} color={"white"} border={"1px solid black"} onClick={handleContinue} marginLeft={"900px"} width={"250px"}>Continue</Button>
 

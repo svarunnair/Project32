@@ -325,6 +325,7 @@
       "id": 1
     }
   ],
+
   "cart": [
     {
       "product": "T-shirts",
@@ -443,13 +444,13 @@
   ],
   "address": [
     {
-      "name": "w",
-      "address": "w",
-      "location": "ww",
-      "state": "w",
-      "mobile": "w",
+      "name": "varun",
+      "address": "kottarakkara",
+      "location": "kollam",
+      "state": "kerala",
+      "mobile": "98797098",
       "more": "w",
-      "city": "w",
+      "city": "kollam",
       "region": "w",
       "id": 1
     }

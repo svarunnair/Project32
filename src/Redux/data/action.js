@@ -34,6 +34,10 @@ export const POST_ADDRESS_REQUIEST="POST_ADDRESS_REQUIEST"
 export const POST_ADDRESS_SUCCESS="POST_ADDRESS_SUCCESS"
 export const POST_ADDRESS_FAILURE="POST_ADDRESS_FAILURE"
 
+export const GET_ADDRESS_REQUIEST="GET_ADDRESS_REQUIEST"    
+export const GET_ADDRESS_SUCCESS="GET_ADDRESS_SUCCESS"
+export const GET_ADDRESS_FAILURE="GET_ADDRESS_FAILURE"
+
 
 
 const getDataRequiest=()=>{
@@ -180,6 +184,24 @@ const postAddressFailure=(data)=>{
     })
 }
 
+const getAddressRequiest=()=>{
+    return({
+        type:GET_ADDRESS_REQUIEST
+    })
+}
+const getAddressSuccess=(data)=>{
+    return({
+        type:GET_ADDRESS_SUCCESS,
+        payload:data
+    })
+}
+const getAddressFailure=(data)=>{
+    return({
+        type:GET_ADDRESS_FAILURE,
+        error:data
+    })
+}
+
 
 export const getData=()=>(dispatch)=>{
     dispatch(getDataRequiest())
@@ -304,5 +326,20 @@ export const postAddress=(data)=>(dispatch)=>{
     })
     .catch((error)=>{
         dispatch(postAddressFailure(error))
+    })
+}
+
+export const getAddress=()=>(dispatch)=>{
+    dispatch(getAddressRequiest())
+    return axios({
+        url:"http://localhost:8000/address",
+        method:"GET"
+    })
+    .then((res)=>{
+        dispatch(getAddressSuccess(res.data))
+        console.log("getAddress",res.data)
+    })
+    .catch((error)=>{
+        dispatch(getAddressFailure(error))
     })
 }

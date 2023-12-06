@@ -77,6 +77,7 @@ useEffect(()=>{
 
       
        <Img marginTop={"-400px"} width={"250px"} src={data?.[count]}/>
+       
        <Flex>
        <Button color={'black'} onClick={handleNext}>next</Button>
        <Button marginBottom={"200px"} color={'black'} onClick={handlePrev}>prev</Button>

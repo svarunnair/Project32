@@ -23,34 +23,48 @@ function Signin() {
     let value=e.target.value 
     setPassword(value)
   }
-  const handleRegistaer=()=>{
+  const handleRegister=()=>{
     navigate('/signup')
   }
 
+  
   const handleLogin=()=>{
-    if(email===""&&password===""){
-     alert('please enter valid data')
-    }
+
+  }
+  const handleSignout=()=>{
+    localStorage.clear()
+    navigate('/')
   }
 
   return (
     <div>
-      <Text marginLeft={"400px"}>NEED AN ACCOUNT?</Text>
-      <Flex marginRight={"500px"} marginTop={"22px"} marginLeft={"800px"}>
-        <Button fontSize={"small"} fontWeight={"1px"} height={"33px"} bg={'white'}
-         border={"1px solid black"} borderRadius={"0px"}onClick={handleRegistaer}>
+      <Text fontSize={17} fontWeight={20} marginTop={'90px'} marginRight={"420px"} marginLeft={"400px"}>NEED AN ACCOUNT?</Text>
+      
+      <Flex  width={"400px"} marginRight={"900px"} 
+      marginTop={"130px"} marginLeft={"520px"}>
+
+        <Button marginTop={"-100px"} fontSize={"small"} fontWeight={7} width={"350px"}  height={"30px"} bg={'white'}
+         border={"1px solid black"} borderRadius={"0px"}onClick={handleRegister}>
           REGISTER </Button>
+
         </Flex>
 
-      <Grid gap={"20px"} paddingLeft={"15px"}>
+      <Grid fontWeight={20} marginLeft={"40px"} textAlign={"left"} width={"400px"} marginTop={"-180px"}  gap={"20px"} paddingLeft={"15px"}>
         
-
-     <Text fontWeight={"small"} marginRight={"1410px"} >LOG IN TO YOUR ACCOUNT</Text> 
-     <Input width={"400px"} onChange={handleEmail} placeholder='EMAIL'/>
-     <Input width={"400px"} onChange={handlePassword} placeholder='PASSWORD'/>
-     <Button onClick={handleLogin} bgColor={'white'} borderRadius={'0px'} 
+<Flex marginTop={"40px"} display={"flex"}>
+<Text> LOG IN TO YOUR ACCOUNT</Text>
+</Flex>
+     
+     <Input fontSize={12} marginTop={"10px"} borderRadius={'0px'}  width={"400px"} onChange={handleEmail} placeholder='EMAIL'/>
+     <Input fontSize={12} marginTop={"10px"} borderRadius={'0px'} width={"400px"} onChange={handlePassword} placeholder='PASSWORD'/>
+     <Button height={"30px"} marginTop={"10px"} onClick={handleLogin} fontWeight={7} bgColor={'white'} borderRadius={'0px'} 
      border={'1px solid black'} width={"400px"}>LOGIN</Button>
-     <Text marginRight={"1050px"} fontSize={'smaller'}>Have you forgotten your password?</Text>
+     
+     <Text textAlign={"left"} marginRight={"1050px"} fontSize={'smaller'}>Have you forgoten your password?</Text>
+    
+     
+
+     <Text cursor={"pointer"}  fontSize={12} onClick={handleSignout}>SIGNOUT</Text>
 
 
 

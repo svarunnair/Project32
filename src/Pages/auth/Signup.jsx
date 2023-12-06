@@ -16,7 +16,7 @@ function Signup() {
 
   const handleName=(e)=>{
     let value=e.target.value 
-    setName(value)
+    setName(value.toUpperCase())
   }
   const handleNumber=(e)=>{
     let value=e.target.value 

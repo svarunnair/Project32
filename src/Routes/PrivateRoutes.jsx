@@ -24,6 +24,7 @@ function PrivateRoutes() {
     <div>
 
 <Routes>
+  
             <Route path='/' element={token&&<Cover/>}/>
             <Route path='/cover' element={token&&<Cover/>}/>
             <Route path='/women' element={token&&<Women/>}/>

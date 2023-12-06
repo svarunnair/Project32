@@ -23,9 +23,9 @@ function Women() {
     <Grid fontSize={"xx-small"} marginRight={"100px"}  >
 
 <Flex position={'sticky'} zIndex="1000"  top="200" marginTop={"100px"} marginBottom={"-80px"} marginLeft={"30px"} gap={"10px"}>
-        <Button fontWeight={450} width={"40px"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'grey'}>SIZE</Button>
-        <Button fontWeight={450} width={"50px"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'grey'}>PRICE</Button>
-        <Button fontWeight={450} width={"60px"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'grey'}>COLOUR</Button>
+        <Button fontWeight={450} width={"40px"} bg={"rgba(255,255,255,0)"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'black'}>SIZE</Button>
+        <Button fontWeight={450} width={"50px"} bg={"rgba(255,255,255,0)"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'black'}>PRICE</Button>
+        <Button fontWeight={450} width={"60px"} bg={"rgba(255,255,255,0)"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'black'}>COLOUR</Button>
 
         </Flex>
         <Grid marginTop={"150px"} width={"1200px"} display={'grid'} gridTemplateColumns={"repeat(6,1fr)"}>

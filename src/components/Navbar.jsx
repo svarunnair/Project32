@@ -26,6 +26,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getCart, getData } from '../Redux/data/action'
+import { getAuth } from '../Redux/auth/authAction'
   
 
   
@@ -56,10 +57,16 @@ import { getCart, getData } from '../Redux/data/action'
     const navigate=useNavigate()
     const path=useLocation()
     const dispatch=useDispatch()
+    const authData=useSelector((store)=>store.auth.getAuth)
+
+    console.log("NavauthData",authData)
+
+
 
     const shoping=useSelector((store)=>store.data.getCart)
 
     console.log('shoping.......',shoping)
+    
     
     const handleMen=()=>{
       navigate('/men')
@@ -92,16 +99,24 @@ import { getCart, getData } from '../Redux/data/action'
      dispatch(getCart())
     },[])
 
+
+    useEffect(()=>{
+     dispatch(getAuth())
+    },[])
     const items=shoping.length
     console.log("itemsssss",items)
+
+    let name=authData.map((item)=>{
+      return item.name})
     return (
       <>
         <Box bg={"transparent"} position={'sticky'}  top="0"
         zIndex="1000" >
+          
           <Flex  h={16} alignItems={'center'} justifyContent={'space-between'}>
             {/* <Img  width={"600px"} src={zara}/> */}
-
-          <Box  marginLeft={"50px"} marginTop={"115px"}>
+            <Flex cursor={"pointer"} ><Text marginLeft={"20px"} fontSize={"xx-large"} color={"black"}>=</Text></Flex>
+          <Box  marginLeft={"15px"} marginTop={"115px"}>
             <svg onClick={handleImage} cursor={'pointer'} width={"265px"} 
             aria-label="ZARA India logo. Go to home page" 
             class="layout-catalog-logo-icon layout-catalog-logo-icon--products-category-view" 
@@ -127,18 +142,19 @@ import { getCart, getData } from '../Redux/data/action'
             <HStack spacing={8} alignItems={'center'}>
              
             
-<Grid marginLeft={"50px"} marginTop={"25px"}>
+<Grid width={"100px"} marginLeft={"240px"} marginTop={"25px"}>
 
-{path.pathname!=="/search"&&<Input onClick={handleSearch}  width={"360px"} border={"groove"} borderRadius={"0px"} color={'red'} height={"30px"}
+{path.pathname!=="/search"&&<Input fontWeight={11} onClick={handleSearch} bg={"white"}  width={"360px"} border={"groove"}
+ borderRadius={"0px"} color={'red'} height={"32px"}
  fontSize={"small"}  _placeholder={{ color: 'black', textAlign:"right" }}  placeholder='SEARCH'/>}
 
 </Grid>
              
-             <Flex cursor={'pointer'}  color={'black'} marginLeft={"300px"} gap={"20px"}>
+             <Flex cursor={'pointer'}  color={'black'} marginLeft={"250px"}  gap={"20px"}>
 
-             <Text fontSize={'x-small'} onClick={handleLogin}>LOG IN</Text>
-             <Text fontSize={'x-small'} onClick={handleHelp}>HELP</Text>
-             <Text fontSize={'x-small'} onClick={handleShoping}>SHOPING BAG({items})</Text>
+           {token?<Text fontWeight={90} marginTop={"-4px"} fontSize={'small'} onClick={handleLogin} >{name}</Text>:<Text fontSize={'x-small'} fontWeight={90} onClick={handleLogin}>LOG IN</Text>}
+             <Text fontWeight={90} fontSize={'x-small'} onClick={handleHelp}>HELP</Text>
+             <Text fontWeight={90} fontSize={'x-small'} onClick={handleShoping}>SHOPING BAG({items})</Text>
 
               
              </Flex>
