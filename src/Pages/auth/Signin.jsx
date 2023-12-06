@@ -1,6 +1,8 @@
 import { Button, Flex, Grid, Input, Text } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { getAuth } from '../../Redux/auth/authAction'
 
  
 
@@ -11,7 +13,14 @@ function Signin() {
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
   const navigate=useNavigate()
-  
+  const authdata=useSelector((store)=>store.auth.getAuth)
+  const dispatch=useDispatch()
+
+  console.log("sssssauthData",authdata)
+
+  useEffect(()=>{
+   dispatch(getAuth())
+  },[])
   
 
 
@@ -26,11 +35,24 @@ function Signin() {
   const handleRegister=()=>{
     navigate('/signup')
   }
-
+  let emailData=authdata.map((item)=>{ return item.email})
+  let passwordData=authdata.map((item)=>{ return item.password})
   
   const handleLogin=()=>{
-
+   if(email===emailData&&password===passwordData){
+    navigate('/')
+   }
+   else{
+    alert('please signup')
+   }
   }
+
+  console.log("eeemmil",emailData)
+  console.log("passwrd",passwordData)
+
+
+
+
   const handleSignout=()=>{
     localStorage.clear()
     navigate('/')

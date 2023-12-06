@@ -152,7 +152,7 @@ import { getAuth } from '../Redux/auth/authAction'
              
              <Flex cursor={'pointer'}  color={'black'} marginLeft={"250px"}  gap={"20px"}>
 
-           {token?<Text fontWeight={90} marginTop={"-4px"} fontSize={'small'} onClick={handleLogin} >{name}</Text>:<Text fontSize={'x-small'} fontWeight={90} onClick={handleLogin}>LOG IN</Text>}
+           {token?<Text fontWeight={90} marginTop={"-0px"} fontSize={'x-small'} onClick={handleLogin} >{name}</Text>:<Text fontSize={'x-small'} fontWeight={90} onClick={handleLogin}>LOG IN</Text>}
              <Text fontWeight={90} fontSize={'x-small'} onClick={handleHelp}>HELP</Text>
              <Text fontWeight={90} fontSize={'x-small'} onClick={handleShoping}>SHOPING BAG({items})</Text>
 
