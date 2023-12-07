@@ -1,9 +1,9 @@
 import { Box, Button, Flex, Grid, Img, Text } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAddress, getBilling } from '../Redux/data/action'
+import { getAddress, getBilling, getData } from '../Redux/data/action'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { getAuth } from '../Redux/auth/authAction'
 
 function Billing() {
@@ -13,10 +13,23 @@ function Billing() {
     const [data,setdata]=useState([])
     const authData=useSelector((store)=>store.auth.getAuth)
     const address=useSelector((store)=>store.data.getAddress)
+    const mainData=useSelector((store)=>store.data.getData)
+    const navigate=useNavigate()
+
+    console.log("billManin Data",mainData)
+
+    useEffect(()=>{
+      dispatch(getData())
+    },[])
 
     console.log("adrss",address)
 
     console.log("authData",authData)
+
+
+    const handleEdit=()=>{
+      navigate('/edit')
+    }
     
 
     useEffect(()=>{
@@ -56,7 +69,7 @@ function Billing() {
         <Grid textAlign={"left"} marginLeft={"10px"}>
         <Text fontSize={11}>Name:{item.name}</Text>
         <Text fontSize={11}>Location:{item.location}</Text>
-        <Text  cursor={"pointer"} fontSize={9} textDecoration={'underline'}>Edit</Text>
+        <Text onClick={handleEdit} marginTop={"20px"} cursor={"pointer"} fontSize={9} textDecoration={'underline'}>Edit</Text>
         </Grid>
        ))}
       </Box>
@@ -82,10 +95,10 @@ function Billing() {
         </Grid>
 
         <Flex>
-        <Text marginLeft={"25px"} fontSize={"smaller"} fontWeight={700}>WEDNESDAY 13,  DECEMBER      <Text fontWeight={20}>FREE</Text></Text>
+        <Text marginLeft={"25px"} fontSize={"smaller"} fontWeight={700}>WEDNESDAY 13,  DECEMBER </Text><Text fontSize={"small"} marginLeft={"200px"}  fontWeight={20}>FREE</Text>
         </Flex>
         <Flex>
-       <Text marginLeft={"25px"} fontSize={11}>Free shipping for orders over ₹ 2,990 applies only for full price items</Text> 
+       <Text marginTop={"15px"} marginLeft={"25px"} fontSize={11}>Free shipping for orders over ₹ 2,990 applies only for full price items</Text> 
       
         </Flex>
         <Flex marginBottom={"20px"} marginLeft={"25px"} marginTop={"20px"} >
@@ -94,11 +107,19 @@ function Billing() {
        
         
         </Grid  >
-       <Flex  marginTop={"100px"} textAlign={"left"}  border={"1px solid black"} fontSize={12} gap={"55px"} 
-       marginLeft={"950px"} color={"black"}>
-        <Text>SHIPPING</Text> <Text>FREE</Text><Button bg={"black"} color={"white"} borderRadius={"0px"}>Continue</Button>
-       </Flex>
-        
+       
+       <Flex bg={"transparent"} position={'sticky'}  top="0"
+        zIndex="1000" width={"1247px"} height={"75px"}   marginTop={"100px"} textAlign={"right"}  border={"1px solid black"} 
+       fontSize={12} gap={"55px"} 
+        color={"black"}>
+        <Text marginTop={"30px"} marginLeft={"960px"}>SHIPPING</Text> 
+        <Text  marginTop={"30px"}>FREE</Text>
+        <Button bg={"black"} width={"300px"} height={"75px"} color={"white"} 
+        borderRadius={"0px"} _hover={"black"}>Continue</Button>
+      </Flex>
+      
+      
+
       
         </div>
   )

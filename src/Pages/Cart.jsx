@@ -81,11 +81,11 @@ function Cart() {
 
           </Grid>
 
-          <Grid   border={"1px solid black"}>
-          <Text >Total amount :₹ {total}.00</Text>
-            <Text fontSize={"x-small"}>INCLUDING GST
+          <Grid marginTop={"80px"} height={"80px"}  border={"1px solid black"}>
+          <Text marginLeft={"500px"}>Total amount :₹ {total}.00</Text>
+            <Text marginLeft={"500px"} fontSize={"x-small"}>INCLUDING GST
 * EXCL SHIPPING COST</Text>
-<Button _hover={{ bg: "black" }} marginLeft={"1045px"} height={"80px"} 
+<Button marginTop={"-41px"} _hover={{ bg: "black" }} marginLeft={"1045px"} height={"80px"} 
 borderRadius={"0px"} width={"200px"} bg={"black"} color={"white"} onClick={hanldleContinue} >Continue</Button>
 </Grid>
           </Grid>

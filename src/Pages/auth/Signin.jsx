@@ -1,4 +1,4 @@
-import { Button, Flex, Grid, Input, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Grid, Input, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -59,8 +59,9 @@ function Signin() {
   }
 
   return (
-    <div>
-      <Text fontSize={17} fontWeight={20} marginTop={'90px'} marginRight={"420px"} marginLeft={"400px"}>NEED AN ACCOUNT?</Text>
+    <Grid marginBottom={"200px"}>
+      <Text fontSize={17} fontWeight={20} marginTop={'90px'} marginRight={"620px"} 
+     >NEED AN ACCOUNT?</Text>
       
       <Flex  width={"400px"} marginRight={"900px"} 
       marginTop={"130px"} marginLeft={"520px"}>
@@ -82,9 +83,12 @@ function Signin() {
      <Button height={"30px"} marginTop={"10px"} onClick={handleLogin} fontWeight={7} bgColor={'white'} borderRadius={'0px'} 
      border={'1px solid black'} width={"400px"}>LOGIN</Button>
      
-     <Text textAlign={"left"} marginRight={"1050px"} fontSize={'smaller'}>Have you forgoten your password?</Text>
-    
      
+     
+    
+     <Flex>
+      <Text>Have you forgot your password?</Text>
+     </Flex>
 
      <Text cursor={"pointer"}  fontSize={12} onClick={handleSignout}>SIGNOUT</Text>
 
@@ -92,7 +96,7 @@ function Signin() {
 
     
       </Grid>
-    </div>
+    </Grid>
   )
 }
 

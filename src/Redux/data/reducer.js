@@ -1,4 +1,4 @@
-import { GET_ADDRESS_FAILURE, GET_ADDRESS_REQUIEST, GET_ADDRESS_SUCCESS, GET_BILLING_FAILURE, GET_BILLING_REQUIEST, GET_BILLING_SUCCESS, GET_CART_FAILURE, GET_CART_REQUIEST, GET_CART_SUCCESS, GET_DATA_FAILURE, GET_DATA_REQUIEST, GET_DATA_SUCCESS, GET_DETAILS_FAILURE, GET_DETAILS_REQUIEST, GET_DETAILS_SUCCESS, PATCH_CART_FAILURE, PATCH_CART_REQUIEST, PATCH_CART_SUCCESS, POST_ADDRESS_FAILURE, POST_ADDRESS_REQUIEST, POST_ADDRESS_SUCCESS, POST_BILLING_FAILURE, POST_BILLING_REQUIEST, POST_BILLING_SUCCESS, POST_CART_FAILURE, POST_CART_REQUIEST, POST_CART_SUCCESS } from "./action"
+import { GET_ADDRESS_FAILURE, GET_ADDRESS_REQUIEST, GET_ADDRESS_SUCCESS, GET_BILLING_FAILURE, GET_BILLING_REQUIEST, GET_BILLING_SUCCESS, GET_CART_FAILURE, GET_CART_REQUIEST, GET_CART_SUCCESS, GET_DATA_FAILURE, GET_DATA_REQUIEST, GET_DATA_SUCCESS, GET_DETAILS_FAILURE, GET_DETAILS_REQUIEST, GET_DETAILS_SUCCESS, PATCH_ADDRESS_FAILURE, PATCH_ADDRESS_REQUIEST, PATCH_ADDRESS_SUCCESS, PATCH_CART_FAILURE, PATCH_CART_REQUIEST, PATCH_CART_SUCCESS, POST_ADDRESS_FAILURE, POST_ADDRESS_REQUIEST, POST_ADDRESS_SUCCESS, POST_BILLING_FAILURE, POST_BILLING_REQUIEST, POST_BILLING_SUCCESS, POST_CART_FAILURE, POST_CART_REQUIEST, POST_CART_SUCCESS } from "./action"
 
 
 
@@ -14,7 +14,8 @@ const initState={
     postBilling:[],
     getBilling:[],
     postAddress:[],
-    getAddress:[]
+    getAddress:[],
+    patchAddress:[]
 }
 
 export const dataReducer=(state=initState,action)=>{
@@ -201,6 +202,27 @@ export const dataReducer=(state=initState,action)=>{
                                                 isError:true,
                                                 isLoading:false
                                             })
+
+                                            case PATCH_ADDRESS_REQUIEST:
+                                                return({
+                                                    ...state,
+                                                    isErrorr:false,
+                                                    isLoading:true
+                                                })
+                                                case PATCH_ADDRESS_SUCCESS:
+                                                    return({
+                                                        ...state,
+                                                        isError:false,
+                                                        isLoading:false,
+                                                        patchAddress:action.payload
+                                                    })
+                                                    case PATCH_ADDRESS_FAILURE:
+                                                        return({
+                                                            ...state,
+                                                            isError:true,
+                                                            isLoading:false
+                                                        })
+                                    
             
 
                                 

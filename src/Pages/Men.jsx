@@ -22,13 +22,13 @@ function Men() {
   return (
     <Grid >
         <Flex position={'sticky'} zIndex="1000"  top="200" marginTop={"100px"} marginBottom={"-80px"} marginLeft={"30px"} gap={"10px"}>
-        <Button fontWeight={450} width={"40px"} bg={"rgba(255,255,255,0)"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'black'}>SIZE</Button>
-        <Button fontWeight={450} width={"50px"} bg={"rgba(255,255,255,0)"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'black'}>PRICE</Button>
-        <Button fontWeight={450} width={"60px"} bg={"rgba(255,255,255,0)"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={"small"} color={'black'}>COLOUR</Button>
+        <Button fontWeight={450} width={{ base: "20px", md: "30px", lg: "50px" }} bg={"rgba(255,255,255,0)"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={{ base: "xx-small", md: "x-small", lg: "small" }} color={'black'}>SIZE</Button>
+        <Button fontWeight={450} width={{ base: "20px", md: "30px", lg: "50px" }} bg={"rgba(255,255,255,0)"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={{ base: "xx-small", md: "x-small", lg: "small" }} color={'black'}>PRICE</Button>
+        <Button fontWeight={450} width={{ base: "20px", md: "30px", lg: "70px" }} bg={"rgba(255,255,255,0)"} height={"25px"} border={"1px solid black"} borderRadius={"0px"}  fontSize={{ base: "xx-small", md: "x-small", lg: "small" }} color={'black'}>COLOUR</Button>
 
         </Flex>
         
-    <Grid  marginTop={"120px"} border={'1px solid black'} display={'grid'} gridTemplateColumns={"repeat(6,1fr)"}>
+    <Grid  marginTop={"120px"} border={'1px solid black'} display={'grid'} gridTemplateColumns={{ base: "repeat(2,1fr)", md: "repeat(3,1fr)", lg: "repeat(6,1fr)" }}>
         
         {dataMen?.map((item)=>(
             <Grid >

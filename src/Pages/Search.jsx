@@ -43,7 +43,7 @@ function Search() {
     <Grid marginTop={"100px"}>
         
      
-        <Input position={'sticky'} zIndex="1000"  top="200" bg={'white'} color={"black"}
+        <Input position={{base: "sticky", md: "sticky", lg: "sticky" }} zIndex="1000"  top="200" bg={'white'} color={"black"}
          onChange={handleSearch} border={"1px solid black"} borderRadius={"0px"}
          fontSize={"smaller"} _placeholder={{ color: 'grey' } }
           placeholder='SEARCH FOR AN ITEM, COLOUR, COLLECTION...'/>

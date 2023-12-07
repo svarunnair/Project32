@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -10,15 +10,62 @@ import { useNavigate } from 'react-router-dom';
 
 function Cover() {
     const navigate=useNavigate()
+    const [image,setImage]=useState(1)
 
     // const handleWomen=()=>{
     //     navigate('/women')
     // }
+    
+
+let allImages = ["https://static.zara.net/photos///contents/mkt/spots/aw23-north-woman-new/subhome-xmedia-48//w/1920/IMAGE-landscape-fill-a03148dc-17d3-4cbb-98ba-59237b7229f0-default_0.jpg?ts=1701338880413",
+"https://static.zara.net/photos///contents/mkt/spots/aw23-north-woman-dresses/subhome-xmedia-48//w/1920/IMAGE-landscape-fill-62aa6aca-9292-45f7-9a41-0d566002349c-default_0.jpg?ts=1701340105640",
+"https://static.zara.net/photos///contents/mkt/spots/aw23-north-woman-tops/subhome-xmedia-48//w/1920/IMAGE-landscape-fill-3b34b431-c5cd-423b-b44f-895d37d56726-default_0.jpg?ts=1701339240205",
+'https://static.zara.net/photos///contents/mkt/spots/aw23-north-woman-beauty/subhome-xmedia-48//w/1920/IMAGE-landscape-fill-58ebd829-a488-4cea-8d0d-4bde66416b46-default_0.jpg?ts=1701339675676',
+
+]
+
+const handleScroll=(event)=>{
+
+
+
+        if (event.deltaY >= 3) {
+          // Scrolling down
+          setImage(image-1)
+          console.log('Scrolling down!');
+          // Call your function for scrolling down
+        } else if (event.deltaY <= 0) {
+          // Scrolling up
+          setImage(image+1)
+          console.log('Scrolling up!');
+          // Call your function for scrolling up
+        }
+
+
+
+
+
+
+
+    if(image>=3){
+        setImage(0)
+    }
+    if(image<=0){
+        setImage(3)
+    }
+    
+    console.log("scroll",image)
+}
+
+
   return (
-    <Grid cursor={'pointer'}>
+    <Grid marginLeft={{ base: "-8px", md: "-11", lg: "-17px" }} 
+    marginTop={{ base: "", md: "80px", lg: "-105px" }} 
+    width={{ base: "440px", md: "1200px", lg: "1264px" }} cursor={'pointer'}>
+
+      <Img onWheel={handleScroll} src={allImages[image]}/>
 
 
-<Carousel>
+{/* <Carousel>
                 <Grid>
                     <Img  src="https://static.zara.net/photos///contents/mkt/spots/aw23-north-woman-new/subhome-xmedia-48//w/1920/IMAGE-landscape-fill-a03148dc-17d3-4cbb-98ba-59237b7229f0-default_0.jpg?ts=1701338880413" />
                     
@@ -86,7 +133,7 @@ function Cover() {
                     <video autoPlay loop muted src={men}/>
                  
                 </Grid>
-            </Carousel>
+            </Carousel> */}
            
 
             

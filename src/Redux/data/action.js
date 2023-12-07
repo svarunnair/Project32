@@ -38,6 +38,10 @@ export const GET_ADDRESS_REQUIEST="GET_ADDRESS_REQUIEST"
 export const GET_ADDRESS_SUCCESS="GET_ADDRESS_SUCCESS"
 export const GET_ADDRESS_FAILURE="GET_ADDRESS_FAILURE"
 
+export const PATCH_ADDRESS_REQUIEST="PATCH_ADDRESS_REQUIEST"    
+export const PATCH_ADDRESS_SUCCESS="PATCH_ADDRESS_SUCCESS"
+export const PATCH_ADDRESS_FAILURE="PATCH_ADDRESS_FAILURE"
+
 
 
 const getDataRequiest=()=>{
@@ -202,6 +206,24 @@ const getAddressFailure=(data)=>{
     })
 }
 
+const patchAddressRequiest=()=>{
+    return({
+        type:PATCH_ADDRESS_REQUIEST
+    })
+}
+const patchAddressSuccess=(data)=>{
+    return({
+        type:PATCH_ADDRESS_SUCCESS,
+        payload:data
+    })
+}
+const patchAddressFailure=(data)=>{
+    return({
+        type:PATCH_ADDRESS_FAILURE,
+        error:data
+    })
+}
+
 
 export const getData=()=>(dispatch)=>{
     dispatch(getDataRequiest())
@@ -341,5 +363,20 @@ export const getAddress=()=>(dispatch)=>{
     })
     .catch((error)=>{
         dispatch(getAddressFailure(error))
+    })
+}
+
+export const patchAddress=()=>(dispatch)=>{
+    dispatch(patchAddressRequiest())
+    return axios({
+        url:"http://localhost:8000/address",
+        method:"PATCH"
+    })
+    .then((res)=>{
+        dispatch(patchAddressSuccess(res.data))
+        console.log("patchAddress",res.data)
+    })
+    .catch((error)=>{
+        dispatch(patchAddressFailure(error))
     })
 }
