@@ -27,6 +27,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useState } from 'react'
 import { getCart, getData } from '../Redux/data/action'
 import { getAuth } from '../Redux/auth/authAction'
+import Footer from './Footer'
   
 
   
@@ -223,7 +224,8 @@ border={"groove"}
         </Box>
   
         <Box onClick={handleShow} p={4}>
-
+       
+       
 
         {!token&&<PublicRoutes/>}
 {token&&<PrivateRoutes/>}

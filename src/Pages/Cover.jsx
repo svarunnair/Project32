@@ -26,9 +26,7 @@ let allImages = ["https://static.zara.net/photos///contents/mkt/spots/aw23-north
 
 const handleScroll=(event)=>{
 
-
-
-        if (event.deltaY >= 3) {
+        if (event.deltaY >= 0) {
           // Scrolling down
           setImage(image-1)
           console.log('Scrolling down!');
@@ -39,21 +37,8 @@ const handleScroll=(event)=>{
           console.log('Scrolling up!');
           // Call your function for scrolling up
         }
+        console.log("swd3",event)
 
-
-
-
-
-
-
-    if(image>=3){
-        setImage(0)
-    }
-    if(image<=0){
-        setImage(3)
-    }
-    
-    console.log("scroll",image)
 }
 
 
