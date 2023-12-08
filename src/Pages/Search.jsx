@@ -26,6 +26,9 @@ function Search() {
         setData(sortData)
         console.log("sortData",sortData)
     }
+    const handleProduct=(id)=>{
+      navigate(`/detail/${id}`)
+    }
 
     
     
@@ -52,7 +55,7 @@ function Search() {
             
             {data.map((item)=>(
                 <Grid  textAlign={"left"} border={"1px solid black"}>
-                <Img  width={"250px"} src={item.images[0]}/><br/>
+                <Img cursor={'pointer'} onClick={()=>handleProduct(item.id)} width={"250px"} src={item.images[0]}/><br/>
                 <Text marginLeft={"10px"} marginTop={"-20px"} fontSize={"xx-small"}   color={"grey"}>{item.name}</Text><br/>
                 <Text marginLeft={"10px"} marginTop={"-20px"} fontSize={"xx-small"} color={"grey"}>₹ {item.price}</Text>
 

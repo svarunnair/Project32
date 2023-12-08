@@ -26,19 +26,17 @@ let allImages = ["https://static.zara.net/photos///contents/mkt/spots/aw23-north
 
 const handleScroll=(event)=>{
 
-        if (event.deltaY >= 0) {
-          // Scrolling down
-          setImage(image-1)
-          console.log('Scrolling down!');
-          // Call your function for scrolling down
-        } else if (event.deltaY <= 0) {
-          // Scrolling up
-          setImage(image+1)
-          console.log('Scrolling up!');
-          // Call your function for scrolling up
+        if (event.deltaY >= 3) {
+            setImage(0)
+        }else{
+            setImage(image+1)
+        } 
+        if (event.deltaY <= 0) {
+            setImage(3) 
+        }else{
+            setImage(image-1)
         }
-        console.log("swd3",event)
-
+    
 }
 
 
@@ -47,7 +45,8 @@ const handleScroll=(event)=>{
     marginTop={{ base: "", md: "80px", lg: "-105px" }} 
     width={{ base: "440px", md: "1200px", lg: "1264px" }} cursor={'pointer'}>
 
-      <Img onWheel={handleScroll} src={allImages[image]}/>
+      <Img onWheel={handleScroll} src={allImages[image]} />
+      <video onWheel={handleScroll} width={"100%"} autoPlay loop muted src={women}/>
 
 
 {/* <Carousel>

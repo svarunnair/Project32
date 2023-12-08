@@ -381,6 +381,20 @@
       ],
       "id": 4,
       "quant": 1
+    },
+    {
+      "product": "Pants",
+      "category": "women",
+      "price": "2990",
+      "name": "HIGH-WAIST CULOTTE TROUSERS",
+      "img": "https://static.zara.net/photos///2023/V/0/1/p/2286/642/800/2/w/563/2286642800_6_1_1.jpg?ts=1675249897365",
+      "images": [
+        "https://static.zara.net/photos///2023/I/0/1/p/0881/254/800/2/w/315/0881254800_1_1_1.jpg?ts=1700153009340",
+        "https://static.zara.net/photos///2023/V/0/1/p/2286/642/800/2/w/563/2286642800_2_3_1.jpg?ts=1678899122417",
+        "https://static.zara.net/photos///2023/V/0/1/p/2286/642/800/2/w/563/2286642800_1_1_1.jpg?ts=1678899120861"
+      ],
+      "id": 10,
+      "quant": 2
     }
   ],
   "billing": [
@@ -443,14 +457,14 @@
   ],
   "address": [
     {
-      "name": "varun",
-      "address": "kottarakkara",
+      "name": "ajay",
+      "address": "tkd",
       "location": "kollam",
       "state": "kerala",
-      "mobile": "98797098",
-      "more": "w",
-      "city": "kollam",
-      "region": "w",
+      "mobile": "904809838",
+      "more": "",
+      "city": "kottarakkara",
+      "region": "south",
       "id": 1
     }
   ]

@@ -40,7 +40,7 @@ function PrivateRoutes() {
             <Route path='/signin' element={<Signin/>}/>
             <Route path='/beauty' element={<Beauty/>}/>
             <Route path='/search' element={<Search/>}/>
-            <Route path='/edit' element={<Edit/>}/>
+            <Route path='/edit/:id' element={<Edit/>}/>
             
 
 </Routes>

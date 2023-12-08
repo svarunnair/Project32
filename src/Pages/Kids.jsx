@@ -29,16 +29,18 @@ function Kids() {
 
         </Flex>
     
-    <Grid marginTop={"150px"} cursor={'pointer'} fontSize={"xx-small"} display={'grid'} gridTemplateColumns={"repeat(6,1fr)"}>
+    <Grid marginTop={"150px"} cursor={'pointer'} fontSize={"xx-small"} display={'grid'} 
+    gridTemplateColumns={"repeat(6,1fr)"}>
 
 
       {kidsData.map((item)=>(
 
         <Grid  border={'1px solid black'}>
 
+        
+        <Img onClick={()=>handleProduct(item.id)} width={"210px"} src={item.images[0]}/><br/>
         {item.name}<br/>
         {item.price}<br/>
-        <Img onClick={()=>handleProduct(item.id)} width={"210px"} src={item.images[0]}/><br/>
        
           
         

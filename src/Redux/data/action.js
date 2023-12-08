@@ -366,11 +366,12 @@ export const getAddress=()=>(dispatch)=>{
     })
 }
 
-export const patchAddress=()=>(dispatch)=>{
+export const patchAddress=(data,id)=>(dispatch)=>{
     dispatch(patchAddressRequiest())
     return axios({
-        url:"http://localhost:8000/address",
-        method:"PATCH"
+        url:`http://localhost:8000/address/${id}`,
+        method:"PATCH",
+        data
     })
     .then((res)=>{
         dispatch(patchAddressSuccess(res.data))

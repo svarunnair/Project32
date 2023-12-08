@@ -27,8 +27,8 @@ function Billing() {
     console.log("authData",authData)
 
 
-    const handleEdit=()=>{
-      navigate('/edit')
+    const handleEdit=(id)=>{
+      navigate(`/edit/${id}`)
     }
     
 
@@ -69,7 +69,7 @@ function Billing() {
         <Grid textAlign={"left"} marginLeft={"10px"}>
         <Text fontSize={11}>Name:{item.name}</Text>
         <Text fontSize={11}>Location:{item.location}</Text>
-        <Text onClick={handleEdit} marginTop={"20px"} cursor={"pointer"} fontSize={9} textDecoration={'underline'}>Edit</Text>
+        <Text onClick={()=>handleEdit(item.id)} marginTop={"20px"} cursor={"pointer"} fontSize={9} textDecoration={'underline'}>Edit</Text>
         </Grid>
        ))}
       </Box>
