@@ -30,6 +30,9 @@ function Men() {
         
     <Grid  marginTop={"120px"} border={'1px solid black'} display={'grid'} gridTemplateColumns={{ base: "repeat(2,1fr)", md: "repeat(3,1fr)", lg: "repeat(6,1fr)" }}>
         
+
+
+
         {dataMen?.map((item)=>(
             <Grid >
           
